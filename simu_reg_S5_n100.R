@@ -3,11 +3,11 @@ dx=3 # dimension de la regresion
 q=15 # cantidad de no metricas
 n=100
 
-#setwd("~/Dropbox/PLS-Indices/Codigos-Jisu/codigos_paper")
 source("gen_ordinals.R")
 source("data_processing/treatment.R")
 source("reduction/pca.pls.R")
 source("prediction_methods/prediction.R")
+
 # Correlation Matrix
 set.seed(2)
 CorrMat = randcorr(p)
