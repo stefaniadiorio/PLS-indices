@@ -13,14 +13,12 @@ set.seed(2)
 CorrMat = randcorr(p)
 # Diagonal matrix of standard deviations
 
-#D = diag(c(rep(1,(p-q)),runif(q, 0.2, 2)))
 D=diag(rep(1,p))
 # Covariance matrix
 Sigma = D %*% CorrMat %*% D
 mu = rep(0,p)
 
 trueW=eigen(Sigma)$vectors[,c(7,8,13)]
-#trueW=eigen(Sigma)$vectors[,c(2, 8 )]
 a=3
 M = 100 # number of iterations
 
@@ -60,7 +58,6 @@ for (s in 1:M){
   Xm=Z[,(q+1):(p)] # metricas
   
   
-  # "traer" la función create_plist ######################################################### ¡!
   plist <- create_plist(p=q,max_num_categories = 7, min_num_categories=5)
   
   # generalizar a p variables
@@ -182,5 +179,3 @@ MSE_test <- cbind(MSE_test,Prediction_Method)
 row.names(MSE_test) <- NULL
 MSE_test <- as.data.frame(MSE_test)
 MSE_test[,1:5] <- lapply(MSE_test[,1:5], function(x) as.numeric(as.character(x)))
-
-
