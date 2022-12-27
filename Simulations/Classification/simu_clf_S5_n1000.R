@@ -15,7 +15,6 @@ set.seed(2)
 CorrMat = randcorr(p)
 # Diagonal matrix of standard deviations
 
-#D = diag(c(rep(1,(p-q)),runif(q, 0.2, 2)))
 D=diag(rep(1,p))
 # Covariance matrix
 Sigma = D %*% CorrMat %*% D
