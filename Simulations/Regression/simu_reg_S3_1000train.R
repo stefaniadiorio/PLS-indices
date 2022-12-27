@@ -1,6 +1,5 @@
 ### Simulations ###
 
-
 source("data_generation/data_generation.R")
 source("data_processing/treatment.R")
 source("reduction/pca.pls.R")
