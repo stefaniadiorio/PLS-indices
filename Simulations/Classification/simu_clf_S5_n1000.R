@@ -41,7 +41,7 @@ AUC_test_pca_qda <- c()
 AUC_train_pls_qda <- c()
 AUC_test_pls_qda <- c()
 
-for (s in 71:M){
+for (s in 1:M){
   
   Z=mvrnorm(n, mu , Sigma)
   
