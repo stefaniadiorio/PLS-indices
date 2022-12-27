@@ -46,9 +46,7 @@ for (s in 1:M){
   
   
   y=rnorm(n, ((MM[,1]^(2)+sin(MM[,2])+MM[,3]^(2))) ,0.01)
-  #y=(y+9)^(1/2)
   
-  #y=rnorm(n, (MM[,1]+MM[,2])^(2) ,.1)
   ytrain=y[1:700]
   ytest=y[701:1000]
   
