@@ -43,12 +43,9 @@ for (s in 1:M){
   
   # outcome variable
   MM=  scale(Z,center=TRUE,scale=FALSE)%*%trueW
-  
-  
+    
   y=rnorm(n, ((MM[,1]^(2)+sin(MM[,2])+MM[,3]^(2))) ,0.01)
-  #y=(y+9)^(1/2)
   
-  #y=rnorm(n, (MM[,1]+MM[,2])^(2) ,.1)
   ytrain=y[1:70]
   ytest=y[71:100]
   
@@ -57,8 +54,6 @@ for (s in 1:M){
   
   Xm=Z[,(q+1):(p)] # metricas
   
-  
-  # "traer" la función create_plist ######################################################### ¡!
   plist <- create_plist(p=q,max_num_categories = 7, min_num_categories=5)
   
   # generalizar a p variables
