@@ -1,2 +1,7 @@
 # Predictive Power of Composite Socioeconomic Indices in Regression and Classification: Principal Components and Partial Least Squares
-Code and data files
+This repository contains the R code and data files for the paper *Predictive Power of Composite Socioeconomic Indices in Regression and Classification: Principal Components and Partial Least Squares* (2022).
+
+The aim of this paper was to compare the predictive power of reduced-dimension SES indices over a set of metric and non-metric variables, using different treatment procedures for the non-metric variables and alternative prediction methods. This was performed for both regression and classification problems.  
+For treating non-metric variables, we applied techniques commonly used in the related literature -NMC, OHE, NTcont, NTmixed-, proposing a multivariate extension of the normal mean coding (Multivariate Normal Mean Coding -MNMC-) as a new method that captures the multivariate nature of the mixed predictor variables used in the SES index construction. The prediction methods used were Linear, Non-linear, and Inverse Regression for regression problems, and Linear Discriminant Analysis, Quadratic Discriminant Analysis, and Logistic Regression for classification ones.
+
+Simulation folder contains five different settings for each type of problems, that take into account different issues as linear and non-linear relationships between variables (response and variables), the dimension of the reduction and different sample sizes. 
