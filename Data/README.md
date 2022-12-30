@@ -4,4 +4,4 @@ This folder include the two real data sets used in this paper:
 
 These surveys are carried out by the Instituto Nacional de Estadística y Censos from Argentina (INDEC) and we restricted our attention at the household level for the Greater Buenos Aires (GBA) demographic area, where more than 30 percent of the Argentinian population is concentrated.
 
-To run this applications must have the Models files in the environment of R.
+To run this applications must have the **Models** files in the environment of R.
