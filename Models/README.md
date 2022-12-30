@@ -1,1 +1,1 @@
-This files are used for the k-fold cross-validation procedure that we run in order to find the optimal dimension (d) for PCA and PLS.
+This files are used tu run the real data applications, including the k-fold cross-validation procedure that we use to find the optimal dimension (d) for PCA and PLS by minimizing the MSE in regression and maximizing AUC in classification problems.
