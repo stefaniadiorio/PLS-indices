@@ -1,0 +1,1 @@
+This files are used in the simulations in order tu generate de data (data_generation, data_generation_clf, dgp-lili, gen_ordinals and tm), proccess it (accesories, auxiliaryfunMNMC, mnmc, normal_mean_coding, onehot and treatment), reduce (pca.pls) and predict (prediction and prediction_classification).
