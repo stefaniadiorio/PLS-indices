@@ -119,8 +119,8 @@ gm1<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.delta=1){
 # outputs
 # X.star: metric variables
 # xi.1: latent variable
-
-gm2<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.delta=1){
+#aca cambio el par.xi.2 que era c(0,1)
+gm2<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,5), par.delta=1){
   # define objects
   lambda.1<-as.matrix(rep(sqrt(1/k), k)) 
   lambda.2<-as.matrix(rep(c(1/(2*sqrt(k)),1/(2*sqrt(k)),1/(2*sqrt(k)),1/(2*sqrt(k)),-2/(sqrt(k))), k/5))
@@ -138,15 +138,18 @@ gm2<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.delt
   delta<-matrix(rnorm(n=n*k, mean=0, sd=sqrt(par.delta)), nrow=n, ncol=k)
   
   # generate X.star
+  #This for S2
+  #X.star<-xi.1%*%t(lambda.1)+xi.2%*%t(lambda.2)+delta 
   
+  #This for S3
   X.star<-3.5*xi.1%*%t(lambda.1)+0.3*xi.2%*%t(lambda.2)+delta
-  
+
   # report
   return(list(X.star=X.star, xi.1=xi.1, xi.2=xi.2))
 }
 
 # con los scores no ortogonales
-gm2no<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.delta=1){
+gm2no<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,5), par.delta=1){
   # define objects1
   lambda.1<-as.matrix(rep(sqrt(1/k), k)) 
   lambda.2<-as.matrix(c(rep(1/(sqrt(k/2)), floor(k/2)), rep(8, k-floor(k/2)))*4) 
@@ -165,7 +168,7 @@ gm2no<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.de
   
   # generate X.star
   X.star<-3.5*xi.1%*%t(lambda.1)+0.3*xi.2%*%t(lambda.2)+delta
-  
+ 
   # report
   return(list(X.star=X.star, xi.1=xi.1, xi.2=xi.2))
 }
@@ -232,7 +235,7 @@ dgp1<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.delta=1, par.e=0.01)
 # y: outcome variable
 # Xb: true fit
 
-dgp2<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.delta=1, par.e=0.01){
+dgp2<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,5), par.delta=1, par.e=0.01){
   # generate latent variables and metric variables
   yeon<-gm2(n=n, k=k, dist.xi=dist.xi, par.xi.1=par.xi.1, par.xi.2=par.xi.2, par.delta=par.delta/(9*k))
   
@@ -276,7 +279,7 @@ dgp2<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.del
 # y: outcome variable
 # Xb: true fit
 
-dgp3<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.delta=1, par.e=0.01){
+dgp3<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,5), par.delta=1, par.e=0.01){
   # generate latent variables and metric variables
   yeon<-gm2(n=n, k=k, dist.xi=dist.xi, par.xi.1=par.xi.1, par.xi.2=par.xi.2, par.delta=par.delta/(9*k))
   
@@ -326,7 +329,7 @@ dgp3<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.del
 
 
 #hacemos que y dependa de par.xi2 y par.xi1
-dgp4<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.delta=1, par.e=0.01){
+dgp4<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,5), par.delta=1, par.e=0.01){
   # generate latent variables and metric variables
   yeon<-gm2no(n=n, k=k, dist.xi=dist.xi, par.xi.1=par.xi.1, par.xi.2=par.xi.2, par.delta=par.delta/(9*k))
   
@@ -370,7 +373,7 @@ dgp4<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.del
 # y: outcome variable
 # Xb: true fit
 
-dgp5<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.delta=1, par.e=0.01){
+dgp5<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,5), par.delta=1, par.e=0.01){
   # generate latent variables and metric variables
   yeon<-gm2no(n=n, k=k, dist.xi=dist.xi, par.xi.1=par.xi.1, par.xi.2=par.xi.2, par.delta=par.delta/(9*k))
   
@@ -398,6 +401,9 @@ dgp5<-function(n=100, k=10, dist.xi=1, par.xi.1=c(0,1), par.xi.2=c(0,1), par.del
   result<-list(y=y, X.star=X.star, Xb=Xb)  
   return(result)
 }
+
+
+
 
 
 
