@@ -12,7 +12,7 @@ n_train = 100 #100
 n_test = 500 #500
 k = 50 
 pnm = 0.8 # proportion of non-metric variables
-dgp = 2
+dgp = 2 #in dgp-lili choose the weights equal 1
 
 M = 100 # number of repeticiones: usar 100
 
